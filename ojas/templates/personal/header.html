@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ojas Kale </title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css"/>
+    <style>
+        #footer {
+    position: absolute;
+    bottom: 0;
+    width: 1200px;
+    height: 30px;
+    margin: 0 auto;
+    background-color: #323832;
+    border-radius: 10px;
+
+    }
+    body{
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+    a{
+        font-size: 20px;
+        color: #004d00;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body style="background-color:#313135; color:#004d00">
+     <div class="container">
+    <div class="container-fluid">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation"><a href="#">Messages</a></li>
+        </ul>
+    </div>
+
+
+     <footer id="footer" style="color:#004d00">
+        <em> <a href="http://kale-ojas.appspot.com/"> Web </a> | <a href="https://www.facebook.com/iojas"> Facebook </a> | <a href="https://twitter.com/iojas"> Twitter </a> | <a href="https://www.linkedin.com/in/iojas"> Linkedin </a> </em>
+     </footer>
+     </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
