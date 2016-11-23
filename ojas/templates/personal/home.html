@@ -5,6 +5,14 @@
 <div class="container">
 <div>
     <h1>Hey Welcome to my website. I am a programmer.</h1>
+    {% for movie in movies %}
+        <div class="col-md-4">
+        <img style="height:300px; width:200px"  src="{{movie.Poster}}"/>
+        <h4><b> {{movie.Title}} <i>({{movie.Year}})</i></h4>
+        </div>
+
+    {% endfor %}
+    <br>
 </div>
 </div>
 {% endblock %}
