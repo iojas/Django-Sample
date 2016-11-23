@@ -12,9 +12,14 @@ def index(req):
     if req.method == 'POST':
 
         mov = req.POST.get('conf')
+        y = req.POST.get('year')
         print mov
         if(mov):
-            string = 'http://www.omdbapi.com/?s='+mov+'&type=movie'
+            if(y):
+                print 'year used '+y
+                string = 'http://www.omdbapi.com/?s='+mov+'&type=movie&y='+y
+            else:
+                string = 'http://www.omdbapi.com/?s=' + mov + '&type=movie'
             resp = requests.get(string)
             print resp
             if(resp.json()['Response']=='False'):
