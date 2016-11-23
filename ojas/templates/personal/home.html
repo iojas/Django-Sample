@@ -14,14 +14,14 @@
      </form>
 </div>
 </div>
-    <hr style="width:95%; padding-left:5px; padding-right:5px">
+    <br>
 
 <div class="container">
     <div id="movieList">
 
     {% for movie in movies %}
         <div class="col-md-4">
-        <a href="http://www.omdbapi.com/?i={{movie.imdbID}}">
+        <a href="http://localhost:8000/omdb/movie?i={{movie.imdbID}}">
         <img style="height:300px; width:200px"  src="{{movie.Poster}}"/>
         <h4><b> {{movie.Title}} <i>({{movie.Year}})</i></h4></a>
         </div>

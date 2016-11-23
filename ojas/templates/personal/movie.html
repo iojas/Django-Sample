@@ -1,0 +1,24 @@
+{% extends "personal/header.html" %}
+
+{% block content %}
+<br>
+<div class="container">
+    <div class="col-md-5">
+    <img src="{{movie.Poster}}"/><br>
+    </div>
+    <div class="col-md-7" >
+        <div class="col-md-10" style="padding-left:0px">
+            <h4><b>{{movie.Title}} ({{movie.Year}}) - {{movie.Rated}}</b> </h4>
+        </div>
+        <div class="col-md-2">
+            <h4><b><span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{movie.imdbRating}}</b> </h4>
+        </div>
+    <h6>{{movie.Released}} <b>|</b> {{movie.Runtime}} <b>|</b> {{movie.Country}} <b>|</b> {{movie.Language}} </h6>
+    <p><em> {{movie.Plot}} </em></p>
+    <p>Director: {{movie.Director}}</p>
+    <p>Writer: {{movie.Writer}}</p>
+    <p>Actors: {{movie.Actors}}</p>
+    <p>Awards: {{movie.Awards}}</p>
+    </div>
+</div>
+{% endblock %}

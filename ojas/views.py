@@ -32,5 +32,11 @@ def index(req):
             resp = requests.get(string)
             return render(req, 'personal/home.html', {'movies': resp.json()['Search']})
 
+def shwoMovie(req):
+    titleId = req.GET['i']
+    resp = requests.get('http://www.omdbapi.com/?i='+titleId)
+    print resp.json()['Title']
+    return render(req, 'personal/movie.html', {'movie': resp.json()})
+
 
 
