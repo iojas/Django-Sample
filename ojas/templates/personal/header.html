@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ojas Kale </title>
+    <title>OMDB</title>
     {% load staticfiles %}
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css"/>
+    <!--<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css"/>-->
+    <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %}" type="text/css"/>
     <style>
 
     #footer {
@@ -15,7 +16,13 @@
 	    bottom:0;
 	    left:0;
     }
+    .search{
+        border-style: ridge;
+        border-radius: 10px;
+        height:70px;
+        padding-top: 10px;
 
+    }
     body{
         padding-bottom:60px;
         padding-top: 20px;
@@ -26,6 +33,31 @@
         font-weight: bold;
     }
     </style>
+
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).on('keyup','#submitMovie',function(e){
+            $.ajax({
+                type:'post',
+                url:'/ojas/',
+                data:{
+                    'name':$('#conf').val(),
+                    'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val()
+                },
+
+                datatype: 'json'
+                success: searcsucc
+            });
+        });
+    function searcsucc(data, textstatus, jqXHR){
+        console.log('ojas');
+    }
+    </script>
+
 </head>
 <body  style="background-color:#313135; color:#004d00">
 
