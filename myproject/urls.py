@@ -19,5 +19,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^omdb/', include('ojas.urls')),
-    url(r'.*', include('ojas.urls')),
+    url(r'^user/', include('login.urls')),
+    url(r'^form/', include('forms.urls')),
+
 ]

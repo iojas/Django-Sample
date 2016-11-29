@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/static/favicon.ico">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h3>Login</h3>
+        </div>
+
+        <div class="jumbotron" style="text-align: left;">
+              <form method="post" action="/dashboard/">
+
+                    <label for="usr">UserName:</label>
+                    <input type="text" class="form-control" id="usr" name="usr">
+                    <br>
+                     <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" name="pwd">
+                  <br>
+              {% if err %}
+                  <h5 style="color:red"><b>{{err}}</b></h5>
+              {% endif %}
+
+                    <br>
+                 <button type="submit" class="btn btn-primary btn-md">Submit</button>
+
+              </form>
+        </div>
+
+
+
+        <footer class="footer">
+            <p>&copy; Ojas Kale 2016</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
