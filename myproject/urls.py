@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^omdb/', include('ojas.urls')),
     url(r'^user/', include('login.urls')),
     url(r'^form/', include('forms.urls')),
+    url(r'^', include('ojas.urls')),
 
 ]

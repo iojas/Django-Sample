@@ -6,7 +6,7 @@ import requests
 
 def index(req):
     if req.method == 'GET':
-        resp = requests.get('http://www.omdbapi.com/?s=harry potter&type=movie')
+        resp = requests.get('http://www.omdbapi.com/?s=spider&type=movie')
         return render(req, 'personal/home.html', {'movies': resp.json()['Search']})
 
     if req.method == 'POST':
