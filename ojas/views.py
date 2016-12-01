@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 
@@ -6,11 +6,12 @@ import requests
 
 def index(req):
     if req.method == 'GET':
+        if not req.session.has_key('username'):
+            return redirect('/form/login')
         resp = requests.get('http://www.omdbapi.com/?s=spider&type=movie')
         return render(req, 'personal/home.html', {'movies': resp.json()['Search']})
 
     if req.method == 'POST':
-
         mov = req.POST.get('conf')
         y = req.POST.get('year')
         print mov

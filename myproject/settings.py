@@ -87,6 +87,19 @@ DATABASES = {
         'PORT': '',   # Set to empty string for default.
     }
 }
+"""
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'mydb',
+            'USER': 'sa',
+            'PASSWORD': 'mypwd',
+            'HOST': 'personal.crwqdxb9dkgh.us-west-2.rds.amazonaws.com',
+            'PORT': '3306',
+        }
+    }
+"""
+
 AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
     )
