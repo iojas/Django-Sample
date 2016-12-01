@@ -20,7 +20,7 @@
     <div id="movieList">
 
     {% for movie in movies %}
-        <div class="col-md-4">
+        <div class="col-md-3">
         <a href="http://localhost:8000/omdb/movie?i={{movie.imdbID}}">
         <img style="height:300px; width:200px"  src="{{movie.Poster}}"/>
         <h4><b> {{movie.Title}} <i>({{movie.Year}})</i></h4></a>
